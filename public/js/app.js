@@ -471,25 +471,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Filtreleri uygula
-    function applyFilters() {
-        const magnitudeFilterElement = document.getElementById('magnitudeFilter');
-        const locationFilterElement = document.getElementById('locationFilter');
+   // function applyFilters() {
+   //     const magnitudeFilterElement = document.getElementById('magnitudeFilter');
+   //     const locationFilterElement = document.getElementById('locationFilter');
         
-        const minMagnitude = magnitudeFilterElement ? parseFloat(magnitudeFilterElement.value) || DEFAULT_MIN_MAGNITUDE : DEFAULT_MIN_MAGNITUDE;
-        const locationQuery = locationFilterElement ? locationFilterElement.value.trim().toLowerCase() : '';
+    //    const minMagnitude = magnitudeFilterElement ? parseFloat(magnitudeFilterElement.value) || DEFAULT_MIN_MAGNITUDE : DEFAULT_MIN_MAGNITUDE;
+    //    const locationQuery = locationFilterElement ? locationFilterElement.value.trim().toLowerCase() : '';
         
-        userPreferences.minMagnitude = minMagnitude;
-        userPreferences.locationFilter = locationQuery;
-        userPreferences.save();
+    //    userPreferences.minMagnitude = minMagnitude;
+     //   userPreferences.locationFilter = locationQuery;
+     //   userPreferences.save();
         
         // Filtreleme
-        filteredEarthquakes = allEarthquakes.filter(eq => {
-            const passedMagnitudeFilter = eq.mag >= minMagnitude;
-            const passedLocationFilter = !locationQuery || (eq.title && eq.title.toLowerCase().includes(locationQuery));
-            return passedMagnitudeFilter && passedLocationFilter;
-        });
+       // filteredEarthquakes = allEarthquakes.filter(eq => {
+        //    const passedMagnitudeFilter = eq.mag >= minMagnitude;
+        //    const passedLocationFilter = !locationQuery || (eq.title && eq.title.toLowerCase().includes(locationQuery));
+        //    return passedMagnitudeFilter && passedLocationFilter;
+       // });
         
-        console.log(`Filtreleme sonrası ${filteredEarthquakes.length} deprem kaldı`);
+       // console.log(`Filtreleme sonrası ${filteredEarthquakes.length} deprem kaldı`);
         
         // UI güncelleme
         updateEarthquakeList();
